@@ -1,11 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-    <h1>
-        {{ title }}
-    </h1>
+  <h1>
+    {{ title }}
+  </h1>
 </div>
-<p>
-    code follows
-</p>
+<div>
+  <app-group [query]="query" [groupLevel]="-1"></app-group>
+</div>
 
 <router-outlet></router-outlet>

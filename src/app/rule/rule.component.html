@@ -1,0 +1,28 @@
+<div class="rule">
+  <div class="controls">
+    <input
+      placeholder="Enter Key"
+      type="text"
+      name="name"
+      id="name"
+      [value]="rule.key"
+    />
+    <input
+      placeholder="Enter Operator"
+      type="text"
+      name="operation"
+      id="operation"
+      [value]="rule.operator"
+    />
+    <input
+      placeholder="Enter Value"
+      type="text"
+      name="value"
+      id="value"
+      [value]="rule.value"
+    />
+  </div>
+  <div class="actions">
+    <button (click)="handleDeleteRule(rule.id)">Delete</button>
+  </div>
+</div>

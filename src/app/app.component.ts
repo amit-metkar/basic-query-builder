@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { QueryService } from './query.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Basic Query Builder';
+  title: string;
+  query: any;
+  constructor(private qs: QueryService) {
+    this.title = 'Basic Query Builder';
+    this.query = this.qs.getQuery();
+  }
+  OnInit() {}
+  handleAddRule() {
+    this.query.rules.push(this.qs.getNewRule());
+  }
+  handleAddGroup() {
+    this.query.rules.push(this.qs.getNewGroup());
+  }
 }
