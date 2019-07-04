@@ -10,12 +10,23 @@ export class RuleComponent implements OnInit {
   @Input() groupLevel: number;
   @Input() groupIndex: number;
   @Output() handleDelete = new EventEmitter();
+  @Output() ruleChange = new EventEmitter();
   constructor() {}
 
-  ngOnInit() {
-    console.log('Rule', this.rule, this.groupLevel);
+  @Input()
+  get ruleValue() {
+    return this.rule;
   }
-  handleDeleteRule(id) {
+  set ruleValue(val) {
+    this.rule = val;
+    this.ruleChange.emit(this.ruleValue);
+  }
+
+  ngOnInit() {
+    // console.log('Rule', this.rule, this.groupLevel);
+  }
+
+  handleDeleteRule(id: string) {
     console.log('Delete rule', id, this.groupLevel, this.groupIndex);
     this.handleDelete.emit({
       rule: this.rule,

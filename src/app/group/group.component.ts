@@ -15,7 +15,7 @@ export class GroupComponent implements OnInit {
   constructor(private qs: QueryService) {}
 
   ngOnInit() {
-    console.log(JSON.stringify(this.query));
+    // console.log(JSON.stringify(this.query));
   }
   handleAddRule() {
     const newRule = this.qs.getNewRule();

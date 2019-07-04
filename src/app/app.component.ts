@@ -20,4 +20,7 @@ export class AppComponent {
   handleAddGroup() {
     this.query.rules.push(this.qs.getNewGroup());
   }
+  getQuery() {
+    console.log(this.query);
+  }
 }

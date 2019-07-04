@@ -15,14 +15,14 @@
   <div class="rules" *ngFor="let rule of query.rules; let i = index">
     <app-rule
       *ngIf="rule.type == 'rule'"
-      [rule]="rule"
+      [(rule)]="rule"
       [groupLevel]="groupLevel"
       [groupIndex]="i"
       (handleDelete)="handleChildDelete($event)"
     ></app-rule>
     <app-group
       *ngIf="rule.type == 'group'"
-      [query]="rule"
+      [(query)]="rule"
       [groupLevel]="groupLevel + 1"
       [groupIndex]="i"
       (handleDelete)="handleChildDelete($event)"

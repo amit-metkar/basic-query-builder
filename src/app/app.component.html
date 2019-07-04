@@ -1,11 +1,11 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<div class="app-title">
   <h1>
     {{ title }}
   </h1>
+  <button (click)="getQuery()">Console Print Query</button>
 </div>
 <div>
-  <app-group [query]="query" [groupLevel]="-1"></app-group>
+  <app-group [(query)]="query" [groupLevel]="-1"></app-group>
 </div>
 
 <router-outlet></router-outlet>
